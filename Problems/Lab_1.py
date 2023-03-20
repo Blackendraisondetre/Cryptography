@@ -13,7 +13,6 @@ def matrification(seq:list, size:int) -> str:
     return ans
 def converter(word:list) -> chr:
     return chr(int(''.join(map(str, word)), 2)+1040)
-
 def gf(polynom:list):
     container = []
     for iter in polynom:
@@ -26,18 +25,9 @@ def gf(polynom:list):
             iv[a[-1] + x] = nonce
         container.append(iv)
 
+    truth_table = [bol_fun[int(str(container[3][x]) + str(container[2][x]) + str(container[1][x]) + str(container[0][x]), 2)] for x in range(d)]
+    answer = [cipher[x] ^ truth_table[x] for x in range(len(cipher))]
 
-    res = []
-    for x in range(d):
-        res.append(int(str(container[3][x]) + str(container[2][x]) + str(container[1][x]) + str(container[0][x]), 2))
-
-    res_1 = []
-    for x in res:
-        res_1.append(bol_fun[x])
-
-    fin_ans = []
-    for x in range(len(cipher)):
-        fin_ans.append(cipher[x] ^ res_1[x])
-    print(matrification(fin_ans, 5))
+    print(matrification(answer, 5))
 
 gf(lists)
