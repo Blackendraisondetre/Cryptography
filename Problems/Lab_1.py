@@ -1,8 +1,7 @@
-d = 50
-dd = d - 10
-bol_fun = [0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0]
 cipher = [1,0,0,1,1,0,1,1,0,0,1,1,1,0,1,1,1,1,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,1,0,1,0,0,0,0]
 lists = [[1,1,0,1,0,0,0],[1,1,0,0,1,0,0],[1,1,1,1,0,1,0],[1,1,0,0,0,0,1]]
+bol_fun = [0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0]
+d = 50
 
 def ones(length: int) -> list:
     return [1 for x in range (length)]
@@ -18,7 +17,7 @@ def gf(polynom:list):
     for iter in polynom:
         iv = ones(d)
         a = [x for x in range (len(iter)) if iter[x] == 1]
-        for x in range (dd):
+        for x in range (d-10):
             nonce = 0
             for y in a[:-1]:
                 nonce ^= iv[y+x]
