@@ -70,8 +70,8 @@ def Hemming(seq):
         if min > num:
             min = num
     print(f'Відстань нелінійності = {min}')
-
+    return min
 #seq = [1,0,0,1,1,0,0,1]
-seq = [1,1,1,0,0,0,1,0,1,0,1,0,0,0,1,0]
+#seq = [1,1,1,0,0,0,1,0,1,0,1,0,0,0,1,0]
 
-Hemming(seq)
+#Hemming(seq)

@@ -34,19 +34,19 @@ def SAC(seq:list, order:int) -> bool:
     # Evalutating the table to consider SAF
     doppelganger= []
     for z in reversed(amogus):
-        #print(z)
+        print(z)
         doppelganger.append(list(z.values()))
     ans = zeroes(round(math.log(len(seq),2)))
     for j in range(len(seq)):
         for k in range(len(ans)):
             ans[k] += doppelganger[0][j]^doppelganger[k+1][j]
-    #print(ans)
+    print(ans)
     for x in range(round(math.log(len(seq),2))):
         if ans[x] == len(seq)/2:
-            #print(f'The bool function №{x+1} passed the vibe check')
+            print(f'The bool function №{x+1} passed the vibe check')
             pass
         else:
-            #print(f'The bool function №{x + 1} failed the vibe check')
+            print(f'The bool function №{x + 1} failed the vibe check')
             return False
     return True
 def hist_sac():
@@ -134,6 +134,7 @@ def hist_adam():
 #adamar([0, 0, 1, 0, 0, 1, 1, 1])
 #adamar([0, 1, 1, 1, 1, 0, 1, 1,0,1,0,0,1,1,1,0])
 #combinator3000(3,4)
-#SAC([0,0,1,0,0,1,1,1],2)
+#SAC([0,0,1,0,0,1,1,1],1)
 #SAC([0,1,1,1,1,0,1,1,0,1,0,0,1,1,1,0],1)
 #hist_sac()
+#hist_adam()
